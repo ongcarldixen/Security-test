@@ -4,8 +4,9 @@ CSV-based time tracking -> payroll calculator. It "learns" each employee's
 hourly rate and overtime multiplier from worked examples you provide, then
 computes payroll automatically from raw time in/out punches on later runs.
 It never guesses pay for an employee it has no rate for, and it never
-silently pays $0 for an employee with no punches this period -- both cases
-are called out so you can be asked instead.
+silently pays ₱0 for an employee with no punches this period -- both cases
+are called out so you can be asked instead. Currency defaults to PHP
+(Philippine peso, `rules.json`'s top-level `currency` field).
 
 ## Files
 
@@ -24,7 +25,7 @@ Give an example pay period's punches, plus the gross pay you expect it to
 produce, for at least one employee:
 
 ```
-php payroll.php learn --entries examples_entries.csv --totals examples_totals.csv
+python payroll.py learn --entries examples_entries.csv --totals examples_totals.csv
 ```
 
 `examples_entries.csv` columns: `employee_id,date,time_in,time_out,break_minutes`
@@ -43,7 +44,7 @@ edit `rules.json`'s `overtime.daily_threshold_hours` /
 ## Every pay period
 
 ```
-php payroll.php compute --entries time_entries.csv --out report.csv
+python payroll.py compute --entries time_entries.csv --out report.csv
 ```
 
 Prints and writes a per-employee breakdown (regular hours, overtime hours,
@@ -57,7 +58,7 @@ rate, gross pay). Two things are flagged instead of guessed:
 ## Setup
 
 ```
-php payroll.php init
+python payroll.py init
 ```
 
 Creates `employees.csv` and `rules.json` if they don't already exist.
