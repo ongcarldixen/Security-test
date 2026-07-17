@@ -24,7 +24,7 @@ Give an example pay period's punches, plus the gross pay you expect it to
 produce, for at least one employee:
 
 ```
-python payroll.py learn --entries examples_entries.csv --totals examples_totals.csv
+php payroll.php learn --entries examples_entries.csv --totals examples_totals.csv
 ```
 
 `examples_entries.csv` columns: `employee_id,date,time_in,time_out,break_minutes`
@@ -43,7 +43,7 @@ edit `rules.json`'s `overtime.daily_threshold_hours` /
 ## Every pay period
 
 ```
-python payroll.py compute --entries time_entries.csv --out report.csv
+php payroll.php compute --entries time_entries.csv --out report.csv
 ```
 
 Prints and writes a per-employee breakdown (regular hours, overtime hours,
@@ -57,7 +57,7 @@ rate, gross pay). Two things are flagged instead of guessed:
 ## Setup
 
 ```
-python payroll.py init
+php payroll.php init
 ```
 
 Creates `employees.csv` and `rules.json` if they don't already exist.

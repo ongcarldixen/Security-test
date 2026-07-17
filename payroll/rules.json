@@ -1,13 +1,13 @@
 {
-  "currency": "USD",
-  "default": {
-    "hourly_rate": null,
-    "overtime": {
-      "daily_threshold_hours": 8.0,
-      "weekly_threshold_hours": 40.0,
-      "multiplier": 1.5
+    "currency": "USD",
+    "default": {
+        "hourly_rate": null,
+        "overtime": {
+            "daily_threshold_hours": 8,
+            "weekly_threshold_hours": 40,
+            "multiplier": 1.5
+        },
+        "unpaid_break_minutes": 0
     },
-    "unpaid_break_minutes": 0
-  },
-  "employees": {}
+    "employees": {}
 }
